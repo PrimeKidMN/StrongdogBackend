@@ -1,35 +1,29 @@
-import Fastify from 'fastify';
+import fastify from 'fastify';
+import path from 'path';
+import fastifyStatic from '@fastify/static';
 
-const fastify = Fastify({ logger: true });
-
-// Define a route
-fastify.get('/', async (request, reply) => {
-    return { message: 'Hello, world!' };
+const server = fastify({
+  logger: true
 });
 
-// Start the server
-const start = async () => {
-    try {
-        await fastify.listen({ port: 3000 });
-        console.log('Server running on http://localhost:3000');
-    } catch (err) {
-        fastify.log.error(err);
-Here's the revised `typescript` code considering a more holistic error handling:
-
-```typescript
-import Fastify from 'fastify';
-
-const fastify = Fastify({ logger: true });
-
-// Define a route
-fastify.get('/', async (request, reply) => {
-    return { message: 'Hello, world!' };
+server.register(fastifyStatic, {
+  root: path.join(__dirname, '../public'),
+  prefix: '/',
 });
 
-// Start the server
+server.get('/*', (req, reply) => {
+  reply.sendFile('index.html');
+});
+
 const start = async () => {
-    try {
-    }
-}
+  try {
+    const port = Number(process.env.PORT) || 3000;
+    await server.listen({ port, host: '0.0.0.0' });
+    server.log.info(`Server listening on port ${port}`);
+  } catch (err) {
+    server.log.error(err);
+    process.exit(1);
+  }
+};
 
 start();

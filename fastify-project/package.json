@@ -1,7 +1,7 @@
 {
   "name": "fastify-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Fastify server for serving a static frontend site",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -11,25 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.2.1"
+    "fastify": "^5.2.1",
+    "@fastify/static": "^6.0.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
     "ts-node": "^10.0.0",
     "@types/node": "^20.0.0"
-  }
-}
-
-"devDependencies": {
-"devDependencies": {
-    "tsc-watch": "^5.0.3"
-  },
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "fastify": "^5.2.1"
   }
 }
