@@ -1,5 +1,4 @@
-// All of the updates and their corresponding dates that will be dynamically added in the updates section on about page 
-export const updates = [
+export const updates: { date: string; content: string }[] = [
 	{ date: "2/24/25", content: "Added a card size slider to the main menu" },
 	{ date: "2/10/25", content: "Added block lanschool 3.0 to secret menu" },
 	{ date: "11/18/24", content: "Added stickman boost, stickman boost 2, stick duel battle, stick archers battle, starblast.io, sprinter, soccer skills euro cup, snow battle.io, sniper shot, snay.io, small world cup, and tennis random to the game testing page" },
@@ -33,8 +32,7 @@ export const updates = [
 	{ date: "5/12/24", content: "Added About section" },
 ];
 
-// This holds all of the color themes for light/dark mode
-export const modes = [
+export const modes: { mode: string; properties: { [key: string]: string } }[] = [
 	{
 		mode: "light",
 		properties: {
