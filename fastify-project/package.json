@@ -1,18 +1,35 @@
-{  "scripts": {
-    // ... existing code ...
+{
+  "name": "fastify-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\""
-  },  "devDependencies": {
+    "start": "ts-node src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.2.1"
+  },
+  "devDependencies": {
     "typescript": "^5.0.0",
-    "tsc-watch": "^5.0.3"
+    "ts-node": "^10.0.0",
+    "@types/node": "^20.0.0"
   }
+}
+
+"devDependencies": {
+"devDependencies": {
+    "tsc-watch": "^5.0.3"
+  },
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "fastify": "^5.2.1"
   }
 }
