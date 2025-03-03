@@ -1,6 +1,6 @@
-import fastify from 'fastify';
-import path from 'path';
-import fastifyStatic from '@fastify/static';
+const fastify = require('fastify');
+const path = require('path');
+const fastifyStatic = require('@fastify/static');
 
 const server = fastify({
   logger: true
