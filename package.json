@@ -4,7 +4,7 @@
   "description": "An Express server for serving a static frontend site",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && cp -r public dist/",
+    "build": "node build.js",
     "start": "node src/server.js"
   },
   "keywords": [],
