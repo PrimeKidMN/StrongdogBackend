@@ -3,10 +3,8 @@ const path = require('path');
 
 const app = express();
 
-// Serve static files from the 'public' directory inside 'src'
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Catch-all route to serve the index.html file for all requests
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
