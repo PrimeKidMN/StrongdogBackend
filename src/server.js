@@ -1,29 +1,17 @@
-const fastify = require('fastify');
+const express = require('express');
 const path = require('path');
-const fastifyStatic = require('@fastify/static');
 
-const server = fastify({
-  logger: true
+const app = express();
+
+// Serve static files from the 'public' directory inside 'src'
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Catch-all route to serve the index.html file for all requests
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-server.register(fastifyStatic, {
-  root: path.join(__dirname, '../public'),
-  prefix: '/',
+const port = Number(process.env.PORT) || 3000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
-
-server.get('/*', (req, reply) => {
-  reply.sendFile('index.html');
-});
-
-const start = async () => {
-  try {
-    const port = Number(process.env.PORT) || 3000;
-    await server.listen({ port, host: '0.0.0.0' });
-    server.log.info(`Server listening on port ${port}`);
-  } catch (err) {
-    server.log.error(err);
-    process.exit(1);
-  }
-};
-
-start();
