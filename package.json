@@ -1,22 +1,16 @@
 {
-  "name": "fastify-project",
+  "name": "express-project",
   "version": "1.0.0",
-  "description": "A Fastify server for serving a static frontend site",
+  "description": "An Express server for serving a static frontend site",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "ts-node src/server.ts"
+    "build": "node build.js",
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.2.1",
-    "@fastify/static": "^6.0.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.0",
-    "ts-node": "^10.0.0",
-    "@types/node": "^20.0.0"
+    "express": "^4.21.2"
   }
 }
