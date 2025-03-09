@@ -20,3 +20,9 @@ Package Instructions
 Run: npm install
 Run: npm start
 Send jman the finished link.
+
+Techstack:
+Express
+Fastify
+Docker
+
